@@ -5,7 +5,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	/*justify-content: space-around;*/
 	align-items: center;
 }
 
@@ -66,11 +66,20 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 1rem;
+	justify-content: space-evenly;
 }
 
 .container--sectioned table {
 	align-self: baseline;
 	margin-left: 1rem;
+}
+
+table {
+	box-shadow: 0px 0px 5px 0px #c2c2c2;
+}
+
+table, tr {
+	border: .1rem solid #c2c2c2;
 }
 
 .separator {
