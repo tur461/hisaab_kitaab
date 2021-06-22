@@ -1,8 +1,12 @@
 import '../../Styles/ViewDrug.css';
 import React, {useState, useEffect} from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import uf from '../../utilities/utility_fns';
 import tp from '../../utilities/text_process';
+import ApiConsumer from '../../utilities/ApiConsumer';
 
 const numOfElems = 12;
 
@@ -23,6 +27,26 @@ function ViewDrug(props) {
 		}
 	}
 
+	let deleteDrug = e => {
+		e.preventDefault();
+		e.stopPropagation();
+		let id = localStorage.getItem('selected_id');
+		let c = window.confirm('Please, Confirm Deletion Operation.');
+
+		c && ApiConsumer.deleteDrugById(id, (e, d) => {
+			if(e || d.message){
+				console.log('Error deleting the drug:', e, d.message);
+				toast.error(`Loss!!, Entry Not Deleted: ${d.message}`);
+				return;
+			}
+			console.log('Successfully Deleted!. Response:', d);
+			tp.updateDrugList();
+			toast.success('Win!!. Entry Deleted.');
+			uf.clear(refAr);
+			props.setTrig(-1); // goto home
+		});
+	}
+
 	useEffect(_ => {
 		updateMe(props.trig, refAr);
 	}, [props.trig]); // keep an eye for sub-screen change from other components
@@ -33,7 +57,8 @@ function ViewDrug(props) {
 				<p>{'Drug Details here!:'}</p>
 				<a href='#' className='color--white bg--red' onClick={e => !!!e.preventDefault() && props.setTrig(-1)}>{'Cancel/Leave'}</a>
 				<a href='#' className='color--white bg--purple' onClick={e => !!!e.preventDefault() && props.setTrig(1)} >{'New'}</a>
-				<a href='#' className='color--white bg--lime' onClick={e => !!!e.preventDefault() && props.setTrig(2)} >{'Update'}</a>
+				<a href='#' className='color--white bg--purple' onClick={e => !!!e.preventDefault() && props.setTrig(1)} >{'New'}</a>
+				<a href='#' className='color--white bg--red' onClick={deleteDrug} >{'Delete'}</a>
 			</div>
 			<div className='container--sectioned'>
 				<table>

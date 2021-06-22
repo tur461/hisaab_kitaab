@@ -6,7 +6,7 @@ let ApiConsumer = {
 		cbk(e, null);
 	},
 	fetcher: function(u, d, m) { 
-		if(d) return fetch(u, {
+		if(d || m) return fetch(u, {
 		    		method: this.M[m],
 		    		headers: {
 		      			'Accept': 'application/json',
@@ -37,6 +37,12 @@ let ApiConsumer = {
 
 	saveDrug: function(drug, cbk) {
 		this.fetcher(`${this.apibaseurl}/drug`, drug, 1)
+		.then(d => cbk(null, d))
+		.catch(e => this.c(e, cbk));
+	},
+	
+	deleteDrugById: function(ID, cbk) {
+		this.fetcher(`${this.apibaseurl}/drugs/${ID}`, {}, 3)
 		.then(d => cbk(null, d))
 		.catch(e => this.c(e, cbk));
 	},	
