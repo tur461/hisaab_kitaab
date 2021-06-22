@@ -57,7 +57,7 @@ function ViewDrug(props) {
 				<p>{'Drug Details here!:'}</p>
 				<a href='#' className='color--white bg--red' onClick={e => !!!e.preventDefault() && props.setTrig(-1)}>{'Cancel/Leave'}</a>
 				<a href='#' className='color--white bg--purple' onClick={e => !!!e.preventDefault() && props.setTrig(1)} >{'New'}</a>
-				<a href='#' className='color--white bg--purple' onClick={e => !!!e.preventDefault() && props.setTrig(1)} >{'New'}</a>
+				<a href='#' className='color--white bg--purple' onClick={e => !!!e.preventDefault() && props.setTrig(2)} >{'Update'}</a>
 				<a href='#' className='color--white bg--red' onClick={deleteDrug} >{'Delete'}</a>
 			</div>
 			<div className='container--sectioned'>
