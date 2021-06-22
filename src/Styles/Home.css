@@ -92,3 +92,7 @@ table, tr {
 	margin-top: 2rem;
 	text-align: center;
 }
+
+.d-none {
+	display: none;
+}

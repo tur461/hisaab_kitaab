@@ -25,7 +25,7 @@ let uf = {
 		drug.purchased_total = refs[6].current.value;
 		drug.date_of_last_purchase = refs[7].current.value;
 		
-		drug.name_of_seller = refs[8].current.value;
+		drug.name_of_retailer = refs[8].current.value;
 		drug.sold_total = refs[9].current.value;
 		drug.date_of_last_sale = refs[10].current.value;
 		drug.date_of_last_update = isUpdate ? this.formatDate(new Date()) : null;
@@ -43,7 +43,7 @@ let uf = {
 			drug.name_of_purchasee,
 			+drug.purchased_total,
 			this.formatDate(drug.date_of_last_purchase),
-			drug.name_of_seller,
+			drug.name_of_retailer,
 			+drug.sold_total,
 			this.formatDate(drug.date_of_last_sale),
 			this.formatDate(drug.date_of_last_update),

@@ -5,12 +5,12 @@ const Drug = {
     getInstance: function(drug){
         this.name = drug.name || null;
         this.mrp = drug.mrp || 0.0;
-        this.quantity = drug.quantity || 0;
         this.date_of_entry = new Date();
         this.date_of_last_purchase = drug.date_of_last_purchase || null;
         this.date_of_last_sale = drug.date_of_last_sale || null;
         this.batch_no = drug.batch_no || null;
         this.name_of_purchasee = drug.name_of_purchasee || null;
+        this.name_of_retailer = drug.name_of_retailer || null;
         this.purchased_total = drug.purchased_total || 0;
         this.sold_total = drug.sold_total || 0;
         this.date_of_expiry = drug.date_of_expiry || null;

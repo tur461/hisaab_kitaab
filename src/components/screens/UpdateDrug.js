@@ -79,7 +79,7 @@ function UpdateDrug(props) {
 							<td>{'MRP:'}</td>
 							<td><input type="text" ref={refAr[2]} /></td>
 						</tr>
-						<tr>
+						<tr className='d-none'>
 							<td>{'Quantity:'}</td>
 							<td><input type="number" ref={refAr[3]} /></td>
 						</tr>
@@ -92,7 +92,7 @@ function UpdateDrug(props) {
 				<table>
 					<tbody>
 						<tr>
-							<td>{'Purchasee:'}</td>
+							<td>{'Purchased:'}</td>
 							<td><input type="text" ref={refAr[5]} /></td>
 						</tr>
 						<tr>
@@ -108,7 +108,7 @@ function UpdateDrug(props) {
 				<table>
 					<tbody>
 						<tr>
-							<td>{'Seller:'}</td>
+							<td>{'Retailer:'}</td>
 							<td><input type="text" ref={refAr[8]} /></td>
 						</tr>
 						<tr>

@@ -12,14 +12,18 @@ exports.create = (req, res) => {
     const drug = Drug.getInstance({
         name: req.body.name,
         mrp: req.body.mrp,
-        quantity: req.body.quantity,
         date_of_entry: req.body.date_of_entry,
         date_of_last_purchase: req.body.date_of_last_purchase,
         date_of_last_sale: req.body.date_of_last_sale,
         batch_no: req.body.batch_no,
         name_of_purchasee: req.body.name_of_purchasee,
-        name_of_seller: req.body.name_of_seller
+        name_of_retailer: req.body.name_of_retailer,
+        purchased_total: req.body.purchased_total,
+        sold_total: req.body.sold_total,
+        date_of_expiry: req.body.date_of_expiry,
     });
+
+    console.log('\ncreating drug:', drug);
 
   // Save drug in the database
     drug.create(drug, (err, data) => {

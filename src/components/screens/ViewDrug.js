@@ -50,7 +50,7 @@ function ViewDrug(props) {
 							<td>{'MRP:'}</td>
 							<td ref={refAr[2]}></td>
 						</tr>
-						<tr>
+						<tr className='d-none'>
 							<td>{'Quantity:'}</td>
 							<td ref={refAr[3]}></td>
 						</tr>
@@ -63,7 +63,7 @@ function ViewDrug(props) {
 				<table>
 					<tbody>
 						<tr>
-							<td>{'Purchasee:'}</td>
+							<td>{'Purchased:'}</td>
 							<td ref={refAr[5]}></td>
 						</tr>
 						<tr>
@@ -79,7 +79,7 @@ function ViewDrug(props) {
 				<table>
 					<tbody>
 						<tr>
-							<td>{'Seller:'}</td>
+							<td>{'Retailer:'}</td>
 							<td ref={refAr[8]}></td>
 						</tr>
 						<tr>

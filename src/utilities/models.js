@@ -8,7 +8,7 @@ let drug_model = {
 	purchased_total: 0,
 	sold_total: 0,
 	name_of_purchasee: '',
-	name_of_seller: '',
+	name_of_retailer: '',
 	date_of_last_purchase: '',
 	date_of_last_sale: '',
 	date_of_last_update: '',
